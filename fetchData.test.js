@@ -40,7 +40,7 @@ test('should return promise with rejects', () => {
     return expect(fetch404()).rejects.toThrow();
 });
 
-test('should return promise', async () => {
+test('should return promise with await', async () => {
     await expect(fetch()).resolves.toMatchObject({
         data: {
             success: true,
@@ -48,6 +48,25 @@ test('should return promise', async () => {
     })
 });
 
-test('should return promise with rejects', async () => {
+test('should return promise rejects with await', async () => {
     await expect(fetch404()).rejects.toThrow();
 });
+
+test('should return promise2', async () => {
+    const res = await fetch();
+    expect(res.data).toEqual({
+        success:true
+    })
+});
+
+test('should return promise with rejects2', async () => {
+    expect.assertions(1);
+    try {
+        await fetch404();
+    } catch (e){
+        expect(e.toString()).toEqual('AxiosError: Request failed with status code 404');
+        // console.log(e.toString())
+    }
+
+});
+
