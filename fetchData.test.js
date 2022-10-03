@@ -39,3 +39,15 @@ test('should return promise', () => {
 test('should return promise with rejects', () => {
     return expect(fetch404()).rejects.toThrow();
 });
+
+test('should return promise', async () => {
+    await expect(fetch()).resolves.toMatchObject({
+        data: {
+            success: true,
+        }
+    })
+});
+
+test('should return promise with rejects', async () => {
+    await expect(fetch404()).rejects.toThrow();
+});
