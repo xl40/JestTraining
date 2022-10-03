@@ -13,9 +13,7 @@ test('test runCallback', () => {
     console.log(func.mock)
 });
 
-
 test('test crate object ', () => {
-
     const func = jest.fn()
     crateObject(func)
     console.log(func.mock)

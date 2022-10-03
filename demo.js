@@ -4,10 +4,10 @@ export const runCallback = (callback) => {
     callback();
 }
 
-export const crateObject = (classItem) =>{
+export const crateObject = (classItem) => {
     new classItem();
 }
 
-export  const getData = () =>{
-    return  axios.get('/api').then(res => res.data);
+export const getData = () => {
+    return axios.get('/api').then(res => res.data);
 }
