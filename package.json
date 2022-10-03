@@ -1,10 +1,11 @@
 {
-  "name": "JestTraining",
+  "name": "jest_training",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --watch",
+    "coverage": "jest"
   },
   "keywords": [],
   "author": "",
