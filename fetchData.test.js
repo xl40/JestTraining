@@ -35,3 +35,7 @@ test('should return promise', () => {
         }
     })
 });
+
+test('should return promise with rejects', () => {
+    return expect(fetch404()).rejects.toThrow();
+});
