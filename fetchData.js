@@ -1,15 +1,16 @@
 import axios from 'axios';
+const url = 'http://www.dell-lee.com/react/api/';
 
 export const fetchData = (fn) => {
-    axios.get('http://www.dell-lee.com/react/api/demo.json').then(res => {
+    axios.get(url + 'demo.json').then(res => {
         fn(res.data)
     })
 };
 
-export const fetchWithOutCB = () => {
-    return axios.get('http://www.dell-lee.com/react/api/demo.json');
+export const fetch = () => {
+    return axios.get(url + 'demo.json');
 };
 
 export const fetch404 = () => {
-    return axios.get('http://www.dell-lee.com/react/api/demoxx.json');
+    return axios.get(url + '');
 };

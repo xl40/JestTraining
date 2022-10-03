@@ -1,6 +1,6 @@
 import {
     fetchData,
-    fetchWithOutCB,
+    fetch,
     fetch404
 } from "./fetchData";
 
@@ -14,7 +14,7 @@ test('fetchData return { success:true }', (done) => {
 })
 
 test('without cb', () => {
-    return fetchWithOutCB().then((res) => {
+    return fetch().then((res) => {
         expect(res.data).toEqual({
             success: true
         });
@@ -26,4 +26,12 @@ test('should return 404 without cb', () => {
     return fetch404().catch((e) => {
         expect(e.toString().indexOf('404') > -1).toBe(true)
     });
+});
+
+test('should return promise', () => {
+    return expect(fetch()).resolves.toMatchObject({
+        data:{
+            success: true,
+        }
+    })
 });
