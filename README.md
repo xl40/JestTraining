@@ -1,0 +1,5 @@
+- jest 的配置
+  - 默认配置
+    - 暴露默认配置 `npx jest --init`
+      - 选择后，新增 jest.config
+        - 测试覆盖率 `npx jest --coverage`
