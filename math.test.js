@@ -1,5 +1,5 @@
 const math = require('./math.js')
-const {add, minus, multi} = math;
+import {add, minus, multi} from './math';
 
 test('aaa',()=>{
     expect(add(3, 7))
